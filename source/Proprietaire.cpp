@@ -29,7 +29,7 @@ namespace tp{
 
 		POSTCONDITION(this->reqNom()==p_nom);
 		POSTCONDITION(this->reqPrenom()==p_prenom);
-
+		INVARIANTS();
 	}
 
 	/**
@@ -56,6 +56,7 @@ namespace tp{
 		m_vVehicules.push_back(p_nouveauVehicule.clone());
 
 		POSTCONDITION((nb_vehicule+1)==(int)m_vVehicules.size());
+		INVARIANTS();
 	}
 
 	/**
@@ -82,12 +83,18 @@ namespace tp{
 
 	}
 
+	void Proprietaire::verifieInvariant() const{
+		INVARIANT(this->reqNom()!="");
+		INVARIANT(this->reqPrenom()!="");
+	}
+
+
 	/**
 	 * \brief destructeur qui libere la memoire pour chacun des pointeurs vehicules crees
 	 */
 	Proprietaire::~Proprietaire() {
 		for (int i=0; i < (int)m_vVehicules.size(); i++) {
-			this->m_vVehicules[i]->~Vehicule();
+			delete this->m_vVehicules[i];
 		}
 
 	}

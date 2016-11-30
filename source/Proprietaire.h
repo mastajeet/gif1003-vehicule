@@ -37,7 +37,7 @@ namespace tp{
 		std::string m_nom;
 		std::string m_prenom;
 		std::vector<Vehicule*> m_vVehicules;
-
+		virtual void verifieInvariant() const;
 
 	};
 
