@@ -41,6 +41,7 @@ namespace tp{
 		POSTCONDITION(this->reqImmatriculation()==p_immatriculation);
 		POSTCONDITION(this->reqNiv()==p_niv);
 		POSTCONDITION(this->reqNbPlaces()==p_nbPlaces);
+		INVARIANTS();
 	}
 
 	/**
@@ -71,6 +72,7 @@ namespace tp{
 		PRECONDITION(util::validerImmatriculationPromenade(p_immatriculation));
 		m_immatriculation = p_immatriculation;
 		POSTCONDITION(m_immatriculation == p_immatriculation);
+		INVARIANTS();
 	}
 
 

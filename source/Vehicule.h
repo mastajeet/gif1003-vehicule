@@ -45,7 +45,7 @@ namespace tp{
 
 
 	protected:
-		virtual void asgImmatriculation(const std::string& p_immatriculation) = 0;
+		virtual void asgImmatriculation(const std::string& p_immatriculation) =0 ; //Je met cette methode pure virtuelle car il pourrait y avoir un trou de securite et pouvoir assigner un numero de plaque d'un mauvais type de vehicule
 		std::string m_immatriculation;
 		virtual void verifieInvariant() const;
 

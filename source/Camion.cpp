@@ -34,6 +34,7 @@ namespace tp{
 		POSTCONDITION(this->reqNiv()==p_niv);
 		POSTCONDITION(this->reqNombreEssieux()==p_nbEssieux);
 		POSTCONDITION(this->reqPoids()==p_poids);
+		INVARIANTS();
 	}
 
 	/**
@@ -88,6 +89,7 @@ namespace tp{
 		PRECONDITION(util::validerImmatriculationCamion(p_immatriculation));
 		m_immatriculation = p_immatriculation;
 		POSTCONDITION(m_immatriculation == p_immatriculation);
+		INVARIANTS();
 	}
 
 

@@ -17,6 +17,9 @@
 #include <VehiculePromenade.h>
 #include "contrat/ContratException.h"
 #include <iostream>
+#include "Date.h"
+#include <sstream>
+
 
 using namespace tp;
 
@@ -73,6 +76,33 @@ TEST(VehiculePromenade,VehiculePasAssezPlaces){
 	ASSERT_THROW(VehiculePromenade mon_vehicule("1FUJAPCK25DU88948","ABC 123",0),PreconditionException);
 }
 
+/**
+ * \brief test qui valide que le l'accessuer reqNBPlace fonctionne
+ */
+
+TEST(VehiculePromenade,VehiculePromenadeReqNombrePlace){
+	VehiculePromenade mon_vehicule("1FUJAPCK25DU88948","ABC 123",3);
+	ASSERT_EQ(3,mon_vehicule.reqNbPlaces());
+}
+
+/**
+ * \brief test qui valide que le formattage du texte fonctionne
+ */
+TEST(VehiculePromenade,CamionReqVehiculeFormate){
+	VehiculePromenade mon_vehiculePromenade("1FUJAPCK25DU88948","ABC 123",3);
+
+
+	std::ostringstream output_stream;
+
+	output_stream << "Numero de serie                 :" << "1FUJAPCK25DU88948" << std::endl;
+	output_stream << "Numero d'immatriculation        :" << "ABC 123" << std::endl;
+	output_stream << "date d'enregistrement           :" << mon_vehiculePromenade.reqDateEnregistrement().reqDateFormatee() << std::endl;
+	output_stream << "Nombre Places                   :" << mon_vehiculePromenade.reqNbPlaces() << std::endl;
+	output_stream << "tarif                           :" << mon_vehiculePromenade.tarificationAnnuelle() << "$" << std::endl;
+
+
+	ASSERT_EQ(output_stream.str(),mon_vehiculePromenade.reqVehiculeFormate());
+}
 
 /**
  * \class fixture pour faire differents tests

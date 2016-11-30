@@ -28,6 +28,7 @@ namespace tp{
 		PRECONDITION(util::validerNiv(p_niv))
 		POSTCONDITION(m_niv==p_niv);
 		POSTCONDITION(m_immatriculation==p_immatriculation);
+		INVARIANTS();
 	}
 
 	/**
@@ -84,6 +85,8 @@ namespace tp{
 
 		return vehiculeEstEgal;
 	}
+
+
 
 
 	/**

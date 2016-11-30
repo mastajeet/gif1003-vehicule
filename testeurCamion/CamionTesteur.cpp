@@ -9,6 +9,7 @@
 #include "Camion.h"
 #include "contrat/ContratException.h"
 #include <iostream>
+#include "Date.h"
 
 using namespace tp;
 
@@ -47,6 +48,52 @@ TEST(Camion,CamionTropLeger){
 TEST(Camion,CamionPasAssezEssieux){
 	ASSERT_THROW(Camion mon_camion("1FUJAPCK25DU88948","L123456",3500,1),PreconditionException);
 }
+
+
+/**
+ * \brief test qui valide que le l'acesseur reqPoids fonctionne
+ */
+
+TEST(Camion,CamionReqPoids){
+	Camion mon_camion("1FUJAPCK25DU88948","L123456",3500,2);
+	ASSERT_EQ(3500,mon_camion.reqPoids());
+}
+
+/**
+ * \brief test qui valide que le l'accessuer reqNbEssieux fonctionne
+ */
+
+TEST(Camion,CamionReqNombreEssieux){
+	Camion mon_camion("1FUJAPCK25DU88948","L123456",3500,2);
+	ASSERT_EQ(2,mon_camion.reqNombreEssieux());
+}
+
+
+/**
+ * \brief test qui valide que le formattage du texte fonctionne
+ */
+TEST(Camion,CamionReqVehiculeFormate){
+	Camion mon_camion("1FUJAPCK25DU88948","L123456",3500,3);
+
+
+	std::ostringstream output_stream;
+
+	output_stream << "Numero de serie                 :" << "1FUJAPCK25DU88948" << std::endl;
+	output_stream << "Numero d'immatriculation        :" << "L123456" << std::endl;
+	output_stream << "date d'enregistrement           :" << mon_camion.reqDateEnregistrement().reqDateFormatee() << std::endl;
+	output_stream << "Nombre Essieux                  :" << mon_camion.reqNombreEssieux() << std::endl;
+	output_stream << "Poids                           :" << mon_camion.reqPoids() << " kg" << std::endl;
+	output_stream << "tarif                           :" << mon_camion.tarificationAnnuelle() << "$" << std::endl;
+
+	output_stream.str();
+
+
+	/**
+	 * \brief test qui valide que le formattage du texte fonctionne
+	 */
+	ASSERT_EQ(output_stream.str(),mon_camion.reqVehiculeFormate());
+}
+
 
 
 class CamionValide3500_2: public ::testing::Test{
