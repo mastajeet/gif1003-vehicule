@@ -48,7 +48,7 @@ namespace tp{
 
 	/**
 	 * \brief fonction qui ajoute un vehicule a la liste du proprietaire
-	 * \param[in] un objet polymorphe de type vehicule
+	 * \param[in] p_nouveauVehicule un objet polymorphe de type vehicule
 	**/
 	void Proprietaire::ajouterVehicule(const Vehicule& p_nouveauVehicule) {
 		const int nb_vehicule = m_vVehicules.size();

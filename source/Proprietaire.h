@@ -14,7 +14,15 @@
 #define PROPRIETAIRE_H_
 
 namespace tp{
-
+/**
+ * \class Proprietaire
+ * \brief Classe contennt les information requise pour creer un Proprietaire
+ *
+ *              Attributs: 	std::string m_nom le nom du proprieraire
+ *   						std::string m_prenom le prenom du proprietaire
+ *              			std::vector<Vehicule*> m_vVehicules un vecteur de vehicules
+ *
+ */
 	class Proprietaire{
 
 	public:

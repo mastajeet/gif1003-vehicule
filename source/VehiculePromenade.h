@@ -14,9 +14,13 @@
 #define VEHICULEPROMMENADE_H_
 
 
+
+
+
+namespace tp {
 /**
  * \class VehiculePromenade
- * \brief Classe contennt les information requise pour creer un Camion
+ * \brief Classe contennt les information requise pour creer un VehiculePromenade
  *
  *              Attributs: 	std::string m_niv le numero de serie
  *   						std::string m_immatriculation le numero de plaque
@@ -24,10 +28,6 @@
  *              			int m_nbPlace le nombre de place du vehicule
  *
  */
-
-
-namespace tp {
-
 	class VehiculePromenade: public Vehicule {
 
 	public:

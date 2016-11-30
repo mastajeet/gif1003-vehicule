@@ -13,6 +13,11 @@
 #define CAMION_H_
 
 
+
+
+
+namespace tp{
+
 /**
  * \class Camion
  * \brief Classe contennt les information requise pour creer un Camion
@@ -24,11 +29,6 @@
  *              			int m_poids le poids du camion (plus grand que 3000)
  *
  */
-
-
-namespace tp{
-
-
 class Camion: public Vehicule{
 
 	public:

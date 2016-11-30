@@ -14,6 +14,10 @@
 #include "Date.h"
 
 
+
+
+namespace tp{
+
 /**
  * \class Vehicule
  * \brief Classe contennt les information requise pour creer un vehicule
@@ -23,12 +27,6 @@
  *              			util::Date m_dateEnregistrement le moment ou le vehicule a ete cree
  *
  */
-
-
-
-
-namespace tp{
-
 	class Vehicule{
 
 	public:

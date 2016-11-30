@@ -17,10 +17,10 @@ namespace tp{
 
 	/**
 	 * \brief constructeur de la classe camion
-	 * \param[in] un numero de serie valide
-	 * \param[in] une plaque de license valide pour un camion
-	 * \param[in] Le poids du vehicule (doit etre plus grand que 3000)
-	 * \param[in] Le nombre d'essieux (doit etre plus grand que 1)
+	 * \param[in] p_niv un numero de serie valide
+	 * \param[in] p_immatriculation une plaque de license valide pour un camion
+	 * \param[in] p_poids Le poids du vehicule (doit etre plus grand que 3000)
+	 * \param[in] p_nbEssieux Le nombre d'essieux (doit etre plus grand que 1)
 	 * \return un objet de type camion
 	 */
 	Camion::Camion(const std::string& p_niv,
@@ -80,6 +80,7 @@ namespace tp{
 
 	/**
 	 * \brief mutateur de la propriete m_immatriculation
+	 * \param[in] p_immatriculation un numero d'immatriculation valide pour un camion
 	 * \pre valide si le numero d'immatriculation est possible pour un camion
 	 * \post valide si l'immatriculation a bien ete enregistree
 	 */

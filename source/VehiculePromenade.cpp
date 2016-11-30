@@ -27,10 +27,10 @@ namespace tp{
 
 	/**
 	 * \brief constructeur de la classe vehicule de promenade
-	 * \param[in] un numero de serie valide
-	 * \param[in] une plaque de license valide pour un vehicule de promenade
-	 * \param[in] Le nombre de places (doit etre plus grand que 0)
-	 * \return un objet de type camion
+	 * \param[in] p_niv un numero de serie valide
+	 * \param[in] p_immatriculation une plaque de license valide pour un vehicule de promenade
+	 * \param[in] p_nbPlaces Le nombre de places (doit etre plus grand que 0)
+	 * \return un objet de type VehiculePromenade
 	 */
 	VehiculePromenade::VehiculePromenade(const std::string& p_niv,
 			const std::string& p_immatriculation, int p_nbPlaces)
@@ -63,6 +63,7 @@ namespace tp{
 
 	/**
 	 * \brief mutateur de la propriete m_immatriculation
+	 * \param[in] p_immatriculation un numero d'immatriculation valide pour une vehicule de promenade
 	 * \pre valide si le numero d'immatriculation est possible pour un vehicule de promenade
 	 * \post valide si l'immatriculation a bien ete enregistree
 	 */
